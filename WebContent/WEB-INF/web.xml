@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>SpringmvcDemo</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- 配置一个DispatcherServlet 前段控制器 -->
+  <servlet>
+  <servlet-name>springmvc</servlet-name>
+  <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  
+  <!-- 初始化上下文 -->
+  <init-param>
+  	<param-name>contextConfigLocation</param-name>
+  	<param-value>classpath:com/ht/config/spring-servlet.xml</param-value>
+  </init-param>	
+  	
+  	
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>springmvc</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 设置静态资源不被拦截 -->
+  	<servlet-mapping>
+  		<servlet-name>default</servlet-name>
+  		<url-pattern>*.js</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet-mapping>
+  		<servlet-name>default</servlet-name>
+  		<url-pattern>*.css</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet-mapping>
+  		<servlet-name>default</servlet-name>
+  		<url-pattern>*.jpg</url-pattern>
+  	</servlet-mapping>
+  	
+  	
+</web-app>
